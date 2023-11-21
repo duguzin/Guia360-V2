@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="shortcut icon" href="./Imagens/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <title>Home - Guia360</title>
+    <style>
+      body {
+        background-image: url(https://fontawesome.com/images/icons-gray-bg.svg);
+      }
+      
+    </style>
+</head>
+<body>
+    <!-- <div class="fundo-body"></div> -->
+      <header>
+          <nav class="navbar">
+              <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
+              <div class="navbar-overlay-pesquisa" onclick="togglePesquisaOpen()"></div>
+  
+          <button type="button" class="button-pesquisa" id="navbar-lupa" onclick="togglePesquisaOpen()">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><style>svg{fill:#fff}</style><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+          </button>
+  
+          <button type="button" class="button-menu" id="navbar-burguer" onclick="toggleMenuOpen()">
+              <span class="material-symbols-outlined">menu</span>
+          </button>
+  
+          <a class="navbar-title" href="./index.html">Guia360</a>
+          
+          <nav class="navbar-links"> 
+              <li class="nav-list"><a href="#" class="nav-link">Fale Conosco  |</a></li>
+              <li class="nav-list"><a href="#" class="nav-link">Saiba Mais  |</a></li>
+              <li class="nav-list"><a href="#" class="nav-link">Novidades</a></li>
+          </nav>
+  
+  
+          <nav class="navbar-pesquisa">
+            <input type="text" id="nav-input" onkeyup="filtrar()" placeholder="procure aqui...">
+            <svg class="svg-div" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><style>.svg-div{fill:#676767}</style><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            <ul id="lista-titulos"></ul>
+          </nav>
+  
+          <nav class="navbar-menu">
+  
+            <div class="div-login">
+              <li class="nav-list"><a href="./login.html" class="nav-link-menu" id="link-entrar">Entrar</a></li>
+              <!-- <li class="nav-list"><a href="./cadastro.html" class="nav-link-menu" id="link-cadastrar">Cadastrar</a></li>  -->
+              <a class="link-perfil" href="./perfil.html">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+              </a>
+            </div>
+              <li class="nav-list"><a href="./index.html" class="nav-link-menu">Home</a></li>
+              <li class="nav-list"><a href="./menu-simulados.html" class="nav-link-menu">Simulados</a></li>
+              <li class="nav-list"><a href="./cronograma.html" class="nav-link-menu">Cronograma</a></li>
+              <li class="nav-list"><a href="./aulao.html" class="nav-link-menu">Aulão</a></li>
+              <li class="nav-list"><a href="./materiais-de-revisao.html" class="nav-link-menu" id="active">Materiais de Revisão</a></li>
+              <li class="nav-list"><a href="./provas.html" class="nav-link-menu">Provas</a></li>
+        <li class="nav-list"><a href="./notas-de-corte.html" class="nav-link-menu">Notas de Corte</a></li>
+                
+
+              <img style="margin-top: 20px;" src="https://cutekawaiiresources.files.wordpress.com/2015/10/1082506597_l.gif?w=1200&h=" alt="">
+          </nav>
+          </nav>
+      </header>
+      <main>
+        <div class="button-menu-pc">
+            <button type="button" class="button-menu" id="navbar-burguer-pc" onmouseover="toggleMenuOpen()">
+              Menu<span class="material-symbols-outlined">menu</span>
+            </button>  
+          </div>
+
+          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #2ca0da" class="swiper-apostila mySwiper">
+            <div class="swiper-wrapper">
+          
+              <div class="swiper-slide" id="swiper-slide-apostila">
+                <div class="container-slide-apostila">
+                  <img class="img-slide-apostila" src="https://artpoin.com/wp-content/uploads/2023/08/artpoin-bob-esponja18.png" alt="">
+                  
+                  <div class="content-slide-apostila">
+                    <div class="title-apostila">
+                    APOSTILAS ENEM 2023: PDF grátis para download
+                    </div>
+  
+                    <div class="subtitle-apostila">O material mais top pra você se dar bem no ENEM! Tudo organizadinho em apostilas em PDF pra você ler e dar aquela conferida quando quiser!</div>
+      
+                    <a class="link-apostila" href="#">BAIXAR AGORA</a>
+                  </div>
+              </div>
+             </div>
+              <div class="swiper-slide" id="swiper-slide-apostila">
+                <div class="container-slide-apostila">
+                  <img class="img-slide-apostila" src="https://pngimg.com/uploads/spongebob/spongebob_PNG38.png" alt="">
+                  
+                  <div class="content-slide-apostila">
+                    <div class="title-apostila">
+                    PROVAS ENEM 2012-2021: PDF grátis para download
+                    </div>
+  
+                    <div class="subtitle-apostila">O site ainda manda ver disponibilizando não só as apostilas maneiras, mas também os PDFs das provas do ENEM. Ou seja, tem tudo lá pra você estudar e arrasar!</div>
+      
+                    <a class="link-apostila" href="./provas.html">BAIXAR AGORA</a>
+                  </div>
+              </div>
+             </div>
+             
+              </div>
+              <!-- <div class="swiper-button-next" style="color: #000;"></div>
+              <div class="swiper-button-prev" style="color: #000;"></div> -->
+  
+              <div class="swiper-pagination" id="swiper-pagination-apostila"></div>
+            </div>
+      
+          </div>
+
+          <section class="section-pesquisa">
+            <div class="div-nav-pesquisa">
+              <a href="./index.html"><img src="./logo.png" alt=""></a>
+              <input id="inputBusca" onkeyup="filtrarPc()" type="text" placeholder="pesquise aqui...">
+        
+                <svg class="svg-div" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><style>.svg-div{fill:#003366}</style><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+                <!-- <a href="#"><img src="https://th.bing.com/th/id/R.d2e2beeae6433d170dc022df12b93fdc?rik=GLAGC22r%2bOnyFw&riu=http%3a%2f%2f4.bp.blogspot.com%2f-2VLannZ9rFs%2fT0P9WweKevI%2fAAAAAAAAAQU%2fjLYY3Io5g3c%2fs1600%2fbob-esponja2.gif&ehk=GobocRVQ%2bP29nGKxbVvqqW8Z5D1teGvhKUpgD85ju54%3d&risl=&pid=ImgRaw&r=0" alt=""></a> -->
+              <ul id="lista-titulos-pc"></ul>
+            </div>
+            
+         </section>
+
+          <section class="section-home" id="section-padding">
+            <h1 class="h1-home" style="text-align: center;">Materiais de Revisão</h1>
+        <!-- <h2>Sua Jornada Rumo ao Sucesso Acadêmico Começa Aqui</h2> -->
+
+        <div class="container3">
+            <div class="content7">
+              <h3>Apostilas</h3>
+              <p>
+                Bem-vindo à seção de "Materiais de Revisão" do Guia360 - o seu companheiro confiável na jornada de preparação para vestibulares e concursos. Aqui, reunimos uma extensa coleção de apostilas abrangendo diversas disciplinas e tópicos, projetadas para impulsionar seus estudos e ajudá-lo a atingir seus objetivos acadêmicos e profissionais com sucesso.
+              </p>
+
+              <p>
+                Nossa equipe dedicada compilou cuidadosamente esses materiais de revisão para fornecer a você um acesso fácil a recursos de alta qualidade que abrangem desde Matemática e Português até História e Ciências. Seja você um estudante se preparando para o Enem, um concurseiro determinado ou simplesmente alguém em busca de aprimorar seus conhecimentos, o Guia360 é o seu guia completo para conquistar o sucesso.
+              </p>
+
+              <p>
+                Navegue por nossa vasta biblioteca de apostilas, faça o download das que mais se adequam às suas necessidades e mergulhe de cabeça em um estudo eficaz e direcionado. Estamos aqui para ajudá-lo a alcançar seus objetivos e a transformar seus sonhos em realidade. A educação é a chave, e o Guia360 é o seu portal para desbloquear o conhecimento e o sucesso. Vamos começar essa jornada juntos!
+              </p>
+
+  
+          </div>
+        </div>
+          </section>
+
+          <section class="section-apostilas">
+            <div class="div-menu-apostila">
+              <svg class="svg-materias" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM96 64H288c17.7 0 32 14.3 32 32v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32zm32 160a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM96 352a32 32 0 1 1 0-64 32 32 0 1 1 0 64zM64 416c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM192 256a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zm64-64a32 32 0 1 1 0-64 32 32 0 1 1 0 64zm32 64a32 32 0 1 1 -64 0 32 32 0 1 1 64 0zM288 448a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"/></svg>
+                <h3 class="h3-apostila">Matemática</h3>
+                <button class="dropdown-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg>
+                </button>
+                <div class="menu-apostila">
+                    <div class="h3-menu-apostila">
+                        <h3>Matemática:</h3>
+                    </div>
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte I</h2>
+                        <p>
+                          Aritmética I, Geometria Plana I, Aritmética II, Álgebra I, Razão e Proporção, Geometria Plana II, Álgebra II
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte II</h2>
+                        <p>
+                          Aritmética I, Geometria Plana I, Aritmética II, Álgebra I, Razão e Proporção, Geometria Plana II, Álgebra II
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte III</h2>
+                        <p>
+                          Geometria Plana III, Geometria Espacial, Geometria Analítica, Análise Combinatória, Probabilidade, Estatística, Matrizes e Determinantes, Sistemas Lineares, Números Complexos, Funções III
+                        </p>  
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="div-menu-apostila">
+              <svg class="svg-materias" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M160 32c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32c17.7 0 32 14.3 32 32V288c0 17.7-14.3 32-32 32c0 17.7-14.3 32-32 32H192c-17.7 0-32-14.3-32-32c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32zM32 448H320c70.7 0 128-57.3 128-128s-57.3-128-128-128V128c106 0 192 86 192 192c0 49.2-18.5 94-48.9 128H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H320 32c-17.7 0-32-14.3-32-32s14.3-32 32-32zm80-64H304c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+                <h3 class="h3-apostila">Ciências da Natureza</h3>
+                <button class="dropdown-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg>
+                </button>
+                <div class="menu-apostila">
+                    <div class="h3-menu-apostila">
+                        <h3>Física:</h3>
+                    </div>
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte I</h2>
+                        <p>
+                          Mecânica: Cinemática, Mecânica: Dinâmica, Mecânica: Estática, Gravitação, Trabalho, Colisões, Hidrostática
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte II</h2>
+                        <p>
+                          Eletrostática, Eletrodinâmica, Eletromagnetismo, Calorimetria, Gases, Ondulatória, Ótica, Física Moderna
+                        </p>  
+                    </div>
+
+                    <div class="h3-menu-apostila">
+                      <h3>Biologia:</h3>
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte I</h2>
+                        <p>
+                          Origem da Vida, Citologia I, Vida e Diversidade, Ecologia I, Divisão Celular, Embriologia, Histologia, BioQuímica
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte II</h2>
+                        <p>
+                          Citologia II, Metabolismo, Fisiologia, MicroBiologia, Fungos, Genética I, Genética II, Evolução
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte III</h2>
+                        <p>
+                          Zoologia Comparada, Zoologia, Botânica, Ecologia II, Ecologia III, Ecologia IV
+                        </p>  
+                    </div>
+                    
+                    <div class="h3-menu-apostila">
+                      <h3>Química:</h3>
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte I</h2>
+                        <p>
+                          Sistemas Materiais, Atomística, Tabela Periódica, Ligações Quiímicas, Funções Inorgânicas
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte II</h2>
+                        <p>
+                          Reações Químicas, Grandezas, Gases, Estequiometria, Soluções, Propriedades Coligativas, TermoQuímica, Cinética Química
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte III</h2>
+                        <p>
+                          Equilíbrio Químico, EletroQuímica, Química Nuclear, Introdução à Química Orgânica
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte VI</h2>
+                        <p>
+                          Funções Orgânicas, Isomeria, Polímeros
+                        </p>  
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="div-menu-apostila">
+              <svg class="svg-materias" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M72 88a56 56 0 1 1 112 0A56 56 0 1 1 72 88zM64 245.7C54 256.9 48 271.8 48 288s6 31.1 16 42.3V245.7zm144.4-49.3C178.7 222.7 160 261.2 160 304c0 34.3 12 65.8 32 90.5V416c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V389.2C26.2 371.2 0 332.7 0 288c0-61.9 50.1-112 112-112h32c24 0 46.2 7.5 64.4 20.3zM448 416V394.5c20-24.7 32-56.2 32-90.5c0-42.8-18.7-81.3-48.4-107.7C449.8 183.5 472 176 496 176h32c61.9 0 112 50.1 112 112c0 44.7-26.2 83.2-64 101.2V416c0 17.7-14.3 32-32 32H480c-17.7 0-32-14.3-32-32zm8-328a56 56 0 1 1 112 0A56 56 0 1 1 456 88zM576 245.7v84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM320 32a64 64 0 1 1 0 128 64 64 0 1 1 0-128zM240 304c0 16.2 6 31 16 42.3V261.7c-10 11.3-16 26.1-16 42.3zm144-42.3v84.7c10-11.3 16-26.1 16-42.3s-6-31.1-16-42.3zM448 304c0 44.7-26.2 83.2-64 101.2V448c0 17.7-14.3 32-32 32H288c-17.7 0-32-14.3-32-32V405.2c-37.8-18-64-56.5-64-101.2c0-61.9 50.1-112 112-112h32c61.9 0 112 50.1 112 112z"/></svg>
+                <h3 class="h3-apostila">Ciências Humanas</h3>
+                <button class="dropdown-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg>
+                </button>
+                <div class="menu-apostila">
+                    <div class="h3-menu-apostila">
+                        <h3>Geografia:</h3>
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte I</h2>
+                        <p>
+                          Cartografia, Recursos Minerais, BioGeografia, Urbanização, Demografia, Geografia Agrária, Climatologia
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte II</h2>
+                        <p>
+                          Geografia a Indústria, Astronomia, Hidrografia, Geomorfologia, Problemas Climáticos, Fontes de Energia, Geografia dos Continentes
+                        </p>  
+                    </div>
+
+                    <div class="h3-menu-apostila">
+                      <h3>História:</h3>
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte I</h2>
+                        <p>
+                          Antiguidade Oriental, Antiguidade Ocidental, Idade Média, Idade Moderna, Brasil Colônia, Revoluções Burguesas, Brasil Reinado, Grandes Guerras
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte II</h2>
+                        <p>
+                          República Velha, Era Vargas, Guerra Fria, Populismo, Ditadura Militar, História Contemporânea, Nova República
+                        </p>  
+                    </div>
+                   
+                    <div class="h3-menu-apostila">
+                      <h3>Sociologia:</h3>
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Volume Único</h2>
+                        <p>
+                          Teoria Sociológica, Cultura, Ciências Sociais e Cotidiano, As Relações Sociais no Capitalismo, Política, Sociedade Brasileira, Movimentos Sociais e Mudança Social
+                        </p>  
+                    </div>
+
+                    <div class="h3-menu-apostila">
+                      <h3>Filosofia:</h3>
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Volume Único</h2>
+                        <p>
+                          Introdução aos Estudos em Filosofia, Filosofia Grega, Filosofia Medieval, Filosofia Moderna, Filosofia Contemporânea, Ética, Estética
+                        </p>  
+                    </div> 
+
+                    <div class="h3-menu-apostila">
+                      <h3>Educação Física:</h3>
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Volume Único</h2>
+                        <p>
+                          Esportes para a Vida, Corpo e Emoção, Uma Redescoberta do Corpo, Corpo e Filosofia
+                        </p>  
+                    </div> 
+
+                    <div class="h3-menu-apostila">
+                      <h3>Artes:</h3>
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Volume Único</h2>
+                        <p>
+                          História da Arte: Obras, Tempos e Espaços, História da Arte Brasileira
+                        </p>  
+                    </div> 
+                </div>
+            </div>
+
+            <div class="div-menu-apostila">
+              <svg class="svg-materias" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+                <h3 class="h3-apostila">Linguagens</h3>
+                <button class="dropdown-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/></svg>
+                </button>
+
+                <div class="menu-apostila">
+
+                    <div class="h3-menu-apostila">
+                        <h3>Literatura:</h3>
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte I</h2>
+                        <p>
+                          Literatura e Identidade Negra, Literatura Contemporânea, Pré-modernismo, Modernismo, Modernismo no Brasil, Modernismo de 45
+                        </p>  
+                    </div>
+
+                    <div class="content-menu-apostila">
+                      <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                      </a>
+                        <h2>Parte II</h2>
+                        <p>
+                          Realismo e Naturalismo, Simbolismo e Parnasianismo, Romantismo no Brasil, Literatura Colonial, Literatura Portuguesa, Literatura e Cinema
+                        </p>  
+                    </div>
+
+                    <div class="h3-menu-apostila">
+                      <h3>Português:</h3>
+                    </div>
+
+                  <div class="content-menu-apostila">
+                    <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                    </a>
+                      <h2>Parte I</h2>
+                      <p>
+                        Texto, Linguagem e Comunicação, Gêneros Textuais, Língua e Som, Classes Gramaticais: Substantivo, Classes Gramaticais: Verbos
+                      </p>  
+                  </div>
+
+                  <div class="content-menu-apostila">
+                    <a href="#">
+                      <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                    </a>
+                      <h2>Parte II</h2>
+                      <p>
+                        Sintaxe do Período Simples: Termo da Oração, Sintaxe do Período Simples: Funções Sintáticas, Sintaxe do Período Composto: Coordenação, Sintaxe do Período Composto: Subordinação, Pontuação
+                      </p>  
+                  </div>
+
+                  <div class="h3-menu-apostila">
+                    <h3>inglês:</h3>
+                  </div>
+
+                <div class="content-menu-apostila">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                  </a>
+                    <h2>Volume Único</h2>
+                    <p>
+                      Inglês: Tópicos Gramaticais, Text Comprehension: Compreensão de Textos
+                    </p>  
+                </div>
+
+                <div class="h3-menu-apostila">
+                  <h3>Espanhol:</h3>
+               </div>
+                
+                <div class="content-menu-apostila">
+                  <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>
+                  </a>
+                    <h2>Volume Único</h2>
+                    <p>
+                      Gêneros Textuais e Orais, Redação Dissertativa Argumentativa, Leitura e Compreensão de Texto, Como Fazer a Redação do Enem
+                    </p>  
+                </div>        
+                
+                </div>
+            </div>   
+                
+          </section>
+
+          <footer style="margin-top: 2rem;">
+            <div class="footer-column">
+                <h3>Links Úteis</h3>
+                <ul class="links-footer">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./menu-simulados.html">Simulados</a></li>
+                    <li><a href="./cronograma.html">Cronograma</a></li>
+                    <li><a href="./aulao.html">Aulão</a></li>
+                    <li><a href="./materiais-de-revisao.html" id="active">Materiais de Revisão</a></li>
+                    <li><a href="#">Provas</a></li>
+                    <li><a href="#">Notas de Corte</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Redes Sociais</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a></li>
+                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a></li>
+                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <p>Email: guia360@gmail.com</p>
+                <p>Telefone: (123) 456-7890</p>
+
+                <img style="margin-top: 20px;" src="https://cutekawaiiresources.files.wordpress.com/2015/10/34.gif?w=1200&h=" alt="">
+            </div>
+        </footer>
+      </main>
+      
+      <script src="./Js/script.js"></script>
+      <script type="module">
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.js'
+  
+        var swiper = new Swiper(".mySwiper", {
+          autoplay: {
+          delay: 10000,
+          disableOnInteraction: false,
+        },
+        speed: 600,
+        parallax: true,
+        direction: 'horizontal',
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+          centeredSlides: true,
+  
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+  
+        // Adicione ouvintes de eventos para alternar a visibilidade dos dropdowns e rotacionar o botão
+        
+        var dropdownButtons = document.getElementsByClassName('dropdown-button');
+        for (var i = 0; i < dropdownButtons.length; i++) {
+          dropdownButtons[i].addEventListener('click', function(event) {
+            var dropdown = this.nextElementSibling;
+            if (dropdown.style.display === 'block') {
+              dropdown.style.display = 'none';
+              this.style.transform = 'rotate(-180deg)';
+              this.parentElement.style.marginBottom = '0'; // Remove a margem inferior do card
+            } else {
+              dropdown.style.display = 'block';
+              this.style.transform = 'rotate(0deg)';
+              this.parentElement.style.marginBottom = (dropdown.offsetHeight + 20) + 'px'; // Adiciona a altura do dropdown + 20px como margem inferior do card
+            }
+            event.stopPropagation();
+          });
+        }
+        
+    </script>
+      <button onclick="voltarAoTopo()" id="btnVoltarTopo" class="escondido">
+        <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fff}</style><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+      </button>
+</body>
+</html>

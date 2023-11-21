@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/style.css">
+    <link rel="shortcut icon" href="./Imagens/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <title>Home - Guia360</title>
+    <style>
+      body {
+        background-image: url(https://fontawesome.com/images/icons-gray-bg.svg);
+      }
+      
+    </style>
+</head>
+<body>
+  <!-- <div class="fundo-body"></div> -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-overlay" onclick="toggleMenuOpen()"></div>
+            <div class="navbar-overlay-pesquisa" onclick="togglePesquisaOpen()"></div>
+
+        <button type="button" class="button-pesquisa" id="navbar-lupa" onclick="togglePesquisaOpen()">
+          <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><style>svg{fill:#fff}</style><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+        </button>
+
+        <button type="button" class="button-menu" id="navbar-burguer" onclick="toggleMenuOpen()">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+
+            <a class="navbar-title" href="./index.html">Guia360</a>
+        
+        <nav class="navbar-links"> 
+            <li class="nav-list"><a href="#" class="nav-link">Fale Conosco  |</a></li>
+            <li class="nav-list"><a href="#" class="nav-link">Saiba Mais  |</a></li>
+            <li class="nav-list"><a href="#" class="nav-link">Novidades</a></li>
+        </nav>
+
+
+        <nav class="navbar-pesquisa">
+          <input type="text" id="nav-input" onkeyup="filtrar()" placeholder="procure aqui...">
+          <svg class="svg-div" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 512 512"><style>.svg-div{fill:#676767}</style><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+          <ul id="lista-titulos"></ul>
+        </nav>
+
+        <nav class="navbar-menu">
+
+          <div class="div-login">
+            <li class="nav-list"><a href="./login.html" class="nav-link-menu" id="link-entrar">Entrar</a></li>
+            <!-- <li class="nav-list"><a href="./cadastro.html" class="nav-link-menu" id="link-cadastrar">Cadastrar</a></li>  -->
+            <a class="link-perfil" href="./perfil.html">
+              <svg xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+            </a>
+          </div>
+            <li class="nav-list"><a href="./index.html" class="nav-link-menu" id="active">Home</a></li>
+            <li class="nav-list"><a href="./menu-simulados.html" class="nav-link-menu">Simulados</a></li>
+            <li class="nav-list"><a href="./cronograma.html" class="nav-link-menu">Cronograma</a></li>
+            <li class="nav-list"><a href="./aulao.html" class="nav-link-menu">Aulão</a></li>
+            <li class="nav-list"><a href="./materiais-de-revisao.html" class="nav-link-menu">Materiais de Revisão</a></li>
+            <li class="nav-list"><a href="./provas.html" class="nav-link-menu">Provas</a></li>
+        <li class="nav-list"><a href="./notas-de-corte.html" class="nav-link-menu">Notas de Corte</a></li>
+            
+           <img style="margin-top: 20px;" src="https://cutekawaiiresources.files.wordpress.com/2015/10/1082506597_l.gif?w=1200&h=" alt="">
+            
+        </nav>
+        </nav>
+    </header>
+
+      <main>
+
+        <div class="button-menu-pc">
+          <button type="button" class="button-menu" id="navbar-burguer-pc" onmouseover="toggleMenuOpen()">
+            Menu<span class="material-symbols-outlined">menu</span>
+          </button>  
+        </div>
+        
+
+        <!-- <div class="logo">
+            <a href="#">Guia<span>360</span></a>
+        </div> -->
+        
+        <!-- Slider main container -->
+<!-- Swiper -->
+
+<!-- <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #2ca0da" class="swiper mySwiper">
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide">
+      <img class="image-slide" src="https://yesofcorsa.com/wp-content/uploads/2019/05/4K-Landscape-Scenery-Wallpaper-HQ.jpg" alt="Banner 1">
+      <div class="overlay-slide"></div>
+      <div class="container-slide">
+        <div class="title" data-swiper-parallax="-300">Navegue seu Caminho para o Sucesso!</div>
+      <div class="subtitle" data-swiper-parallax="-200">O Guia360 é sua bússola para os desafios acadêmicos</div>
+      <div class="text" data-swiper-parallax="-100">
+        <p>
+          Encontre o caminho mais eficaz para seus estudos e alcance o sucesso nos vestibulares e concursos. Deixe o Guia360 guiar você nessa jornada.
+        </p>
+      </div>
+    </div>
+    
+      </div>
+    <div class="swiper-slide">
+      <div class="overlay-slide"></div>
+      <img class="image-slide" src="https://th.bing.com/th/id/R.02549b58df319c593ef1e692838a4514?rik=GQAB%2bBF6oaSGog&pid=ImgRaw&r=0" alt="Banner 2">
+      <div class="container-slide">
+        <div class="title" data-swiper-parallax="-300">Descubra Seu Próprio Caminho!</div>
+      <div class="subtitle" data-swiper-parallax="-200">O Guia360: Sua bússola personalizada para o aprendizado.</div>
+      <div class="text" data-swiper-parallax="-100">
+        <p>
+          Aprender é encontrar o caminho certo. Com o Guia360, você tem as ferramentas para navegar seu próprio percurso educacional, alcançando seus objetivos.
+        </p>
+      </div>
+    </div>
+    </div> 
+      
+    <div class="swiper-slide">
+      <img class="image-slide" src="https://www.itl.cat/pngfile/big/206-2066198_new-zealand-4k-free-hd-wallpaper-free-download.jpg" alt="Banner 3">
+      <div class="overlay-slide"></div>
+      <div class="container-slide">
+        <div class="title" data-swiper-parallax="-300">Explore, Aprenda e Conquiste!</div>
+      <div class="subtitle" data-swiper-parallax="-200">Guia360: Sua bússola digital para o sucesso acadêmico.</div>
+      <div class="text" data-swiper-parallax="-100">
+        <p>
+          O conhecimento está lá fora. Explore com confiança, aprenda com dedicação e conquiste seus objetivos acadêmicos. O Guia360 está aqui para te guiar nessa jornada.
+        </p>
+      </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-pagination"></div>
+</div> -->
+
+<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #2ca0da" class="swiper-apostila mySwiper">
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide" id="swiper-slide-apostila">
+      <div class="container-slide-apostila">
+        <img class="img-slide-apostila" src="https://artpoin.com/wp-content/uploads/2023/08/artpoin-bob-esponja18.png" alt="">
+        
+        <div class="content-slide-apostila">
+          <div class="title-apostila">
+          APOSTILAS ENEM 2023: PDF grátis para download
+          </div>
+
+          <div class="subtitle-apostila">O material mais top pra você se dar bem no ENEM! Tudo organizadinho em apostilas em PDF pra você ler e dar aquela conferida quando quiser!</div>
+
+          <a class="link-apostila" href="#">BAIXAR AGORA</a>
+        </div>
+    </div>
+   </div>
+    <div class="swiper-slide" id="swiper-slide-apostila">
+      <div class="container-slide-apostila">
+        <img class="img-slide-apostila" src="https://pngimg.com/uploads/spongebob/spongebob_PNG38.png" alt="">
+        
+        <div class="content-slide-apostila">
+          <div class="title-apostila">
+          PROVAS ENEM 2012-2021: PDF grátis para download
+          </div>
+
+          <div class="subtitle-apostila">O site ainda manda ver disponibilizando não só as apostilas maneiras, mas também os PDFs das provas do ENEM. Ou seja, tem tudo lá pra você estudar e arrasar!</div>
+
+          <a class="link-apostila" href="./provas.html">BAIXAR AGORA</a>
+        </div>
+    </div>
+   </div>
+   
+    </div>
+    <!-- <div class="swiper-button-next" style="color: #000;"></div>
+    <div class="swiper-button-prev" style="color: #000;"></div> -->
+
+    <div class="swiper-pagination" id="swiper-pagination-apostila"></div>
+  </div>
+
+</div>
+    <section class="section-pesquisa">
+          <div class="div-nav-pesquisa">
+            <a href="./index.html"><img src="./logo.png" alt=""></a>
+            <input id="inputBusca" onkeyup="filtrarPc()" type="text" placeholder="pesquise aqui...">
+      
+              <svg class="svg-div" xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><style>.svg-div{fill:#003366}</style><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+              <!-- <a href="#"><img src="https://th.bing.com/th/id/R.d2e2beeae6433d170dc022df12b93fdc?rik=GLAGC22r%2bOnyFw&riu=http%3a%2f%2f4.bp.blogspot.com%2f-2VLannZ9rFs%2fT0P9WweKevI%2fAAAAAAAAAQU%2fjLYY3Io5g3c%2fs1600%2fbob-esponja2.gif&ehk=GobocRVQ%2bP29nGKxbVvqqW8Z5D1teGvhKUpgD85ju54%3d&risl=&pid=ImgRaw&r=0" alt=""></a> -->
+            <ul id="lista-titulos-pc"></ul>
+          </div>
+          
+    </section>
+   <section class="section-home" id="section-padding">
+        <h1 class="h1-home">SEJA BEM-VINDO(A) AO GUIA360: SUA BÚSSOLA 🧭 NA JORNADA ACADÊMICA!</h1>
+        <!-- <h2>Sua Jornada Rumo ao Sucesso Acadêmico Começa Aqui</h2> -->
+
+        <div class="container3">
+          <div class="content5">
+              <img src="https://c1.staticflickr.com/3/2372/2380183266_bd37c42cdb.jpg" alt="">
+            </div> 
+            <div class="content7">
+              <h3>Facilitando Sua Preparação para Conquistas Acadêmicas</h3>
+              <p>
+                Estamos muito felizes em recebê-lo no Guia de Estudos, uma plataforma cuidadosamente concebida para oferecer suporte e orientação durante uma fase crucial e desafiadora de sua vida acadêmica. Sabemos perfeitamente que a preparação para vestibulares e concursos é uma tarefa exigente, repleta de obstáculos e exigências.
+              </p>
+
+              <p>
+                É uma jornada que demanda dedicação incansável, disciplina rigorosa e uma estratégia bem definida. Compreendemos que cada passo que você dá nessa trajetória é significativo, e é por isso que estamos aqui para suavizar essa jornada, transformando-a em uma experiência altamente produtiva e enriquecedora para você.
+              </p>
+
+  
+          </div>
+        </div>
+        
+
+    <div class="container5">
+          <div class="content8">
+            <h3>1 - Nosso Compromisso com o Seu Sucesso</h3>
+            <p>Buscamos otimizar seu estudo com recursos valiosos. Acreditamos na preparação bem orientada como chave para o sucesso em exames acadêmicos. Oferecemos um guia abrangente com estratégias para enfrentar desafios acadêmicos com confiança e conhecimento.</p>   
+         </div>
+            
+        <div class="content9">
+            <h3>2 - Moldando Seu Futuro, Passo a Passo</h3>
+            <p>O Guia de Estudos é seu aliado em todas as etapas da preparação acadêmica. Estamos aqui para orientar desde a escolha do material até o uso de técnicas eficazes, capacitando-o para moldar seu futuro acadêmico de maneira assertiva e encarar desafios vindouros.</p>
+        </div>
+      
+    </div>
+      
+    <div class="container6">
+      <div class="content10">
+        <h3>3 - Investindo no Seu Potencial</h3>
+        <p>Acreditamos em você e queremos ajudá-lo a alcançar seus objetivos acadêmicos. Nosso guia oferece conhecimento e habilidades para o sucesso duradouro, investindo em seu potencial e direcionando-o para o caminho do sucesso.</p>
+    </div>
+    </div>
+        <h1 style="color: #003366; font-size: 28px; margin-bottom: 20px;">Como Alcançaremos Isso:</h1>
+
+      <div class="fundo-content">
+        <div class="container">
+           <div class="content">
+            <h4>Orientação:</h4>
+              <p>
+                 Oferecemos orientação e conselhos personalizados, levando em consideração suas metas, pontos fortes e áreas de aprimoramento.
+              </p>
+           </div>
+
+        <div class="svg-content">
+            <svg xmlns="http://www.w3.org/2000/svg" height="4.5em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>
+        </div>
+
+        <div class="content2">
+          <h4 style="color: #df6e08;">Recursos Curados: </h4>
+            <p>
+              Reunimos e organizamos materiais educacionais relevantes e confiáveis, economizando seu tempo na busca por recursos de qualidade.
+            </p>
+        </div> 
+
+        <div class="svg-content2">
+            <svg xmlns="http://www.w3.org/2000/svg" height="4.5em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>
+        </div>
+
+        </div>
+  
+
+        <div class="container2">
+            <div class="content3">
+              <h4 style="color: #2ca0da;">Técnicas de Estudo: </h4>
+             <p>
+                Compartilhamos estratégias testadas para otimizar seu estudo, ajudando a absorver e reter informações de maneira mais eficaz.
+             </p>
+            </div>
+
+            <div class="svg-content3">
+              <svg xmlns="http://www.w3.org/2000/svg" height="4.5em" viewBox="0 0 512 512" style="color: #2ca0da;"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M78.6 5C69.1-2.4 55.6-1.5 47 7L7 47c-8.5 8.5-9.4 22-2.1 31.6l80 104c4.5 5.9 11.6 9.4 19 9.4h54.1l109 109c-14.7 29-10 65.4 14.3 89.6l112 112c12.5 12.5 32.8 12.5 45.3 0l64-64c12.5-12.5 12.5-32.8 0-45.3l-112-112c-24.2-24.2-60.6-29-89.6-14.3l-109-109V104c0-7.5-3.5-14.5-9.4-19L78.6 5zM19.9 396.1C7.2 408.8 0 426.1 0 444.1C0 481.6 30.4 512 67.9 512c18 0 35.3-7.2 48-19.9L233.7 374.3c-7.8-20.9-9-43.6-3.6-65.1l-61.7-61.7L19.9 396.1zM512 144c0-10.5-1.1-20.7-3.2-30.5c-2.4-11.2-16.1-14.1-24.2-6l-63.9 63.9c-3 3-7.1 4.7-11.3 4.7H352c-8.8 0-16-7.2-16-16V102.6c0-4.2 1.7-8.3 4.7-11.3l63.9-63.9c8.1-8.1 5.2-21.8-6-24.2C388.7 1.1 378.5 0 368 0C288.5 0 224 64.5 224 144l0 .8 85.3 85.3c36-9.1 75.8 .5 104 28.7L429 274.5c49-23 83-72.8 83-130.5zM56 432a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+            </div>
+
+         <div class="content4">
+              <h4>Apoio Comunitário:</h4>
+             <p>
+              Estabelecemos uma comunidade ativa de estudantes e mentores, proporcionando um ambiente de aprendizado colaborativo.
+             </p>
+         </div>
+
+         <div class="svg-content4">
+          <svg xmlns="http://www.w3.org/2000/svg" height="4.5em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M323.4 85.2l-96.8 78.4c-16.1 13-19.2 36.4-7 53.1c12.9 17.8 38 21.3 55.3 7.8l99.3-77.2c7-5.4 17-4.2 22.5 2.8s4.2 17-2.8 22.5l-20.9 16.2L512 316.8V128h-.7l-3.9-2.5L434.8 79c-15.3-9.8-33.2-15-51.4-15c-21.8 0-43 7.5-60 21.2zm22.8 124.4l-51.7 40.2C263 274.4 217.3 268 193.7 235.6c-22.2-30.5-16.6-73.1 12.7-96.8l83.2-67.3c-11.6-4.9-24.1-7.4-36.8-7.4C234 64 215.7 69.6 200 80l-72 48V352h28.2l91.4 83.4c19.6 17.9 49.9 16.5 67.8-3.1c5.5-6.1 9.2-13.2 11.1-20.6l17 15.6c19.5 17.9 49.9 16.6 67.8-2.9c4.5-4.9 7.8-10.6 9.9-16.5c19.4 13 45.8 10.3 62.1-7.5c17.9-19.5 16.6-49.9-2.9-67.8l-134.2-123zM16 128c-8.8 0-16 7.2-16 16V352c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V128H16zM48 320a16 16 0 1 1 0 32 16 16 0 1 1 0-32zM544 128V352c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V144c0-8.8-7.2-16-16-16H544zm32 208a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"/></svg>
+         </div>
+
+         </div>
+         
+        </div>
+        
+         <h1 class="h1-home">Junte-se a Nós e Comece Sua Jornada de Preparação</h1>
+
+         <!-- <div class="container3">
+            <div class="content5">
+              <img src="https://ensinomedio.ensinoeinstein.com/wp-content/uploads/2022/09/objetivo-1.jpg" alt="">
+            </div>
+
+            <div class="content6">
+                <img src="https://th.bing.com/th/id/R.e4dfcdf816eb0a466dcb3adaf9dbb3e8?rik=ZmFnDFHl4RW55w&riu=http%3a%2f%2fcontentools.com.br%2fwp-content%2fuploads%2f2017%2f06%2flivros.jpg&ehk=SjjjWAaeuwvqCfZQzZ8B4Hvkstp6vMtw1bHtwmLUZEE%3d&risl=&pid=ImgRaw&r=0" alt="">
+            </div>
+          </div> -->
+
+
+<div class="container7">
+  <div class="content7">
+    <div class="svg-comunidade"><svg xmlns="http://www.w3.org/2000/svg" height="6em" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>.svg-comunidade svg{fill: #003366;}</style><path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z"/></svg></div>
+            <h3>Uma Comunidade que Valoriza o Conhecimento e a Dedicação</h3>
+            <p>
+              Convidamos você a dar um passo em direção a um mundo de possibilidades educacionais ao explorar o Guia de Estudos. É um convite para fazer parte de uma comunidade apaixonada por aprender e dedicada a alcançar o sucesso acadêmico. Esta é mais que uma simples plataforma; é um ponto de encontro para mentes inquisitivas e motivadas.
+            </p>
+
+            <h3>Sua Jornada Rumo ao Conhecimento Começa Aqui</h3>
+            <p>
+              Este é o começo de uma jornada emocionante, uma jornada onde cada página é uma oportunidade de aprender algo novo, de se aprimorar e se preparar para um futuro promissor. No Guia de Estudos, não estamos apenas oferecendo informações; estamos oferecendo suporte, camaradagem e uma abordagem colaborativa para o sucesso acadêmico.
+            </p>
+
+            <h3>Apoio e Orientação a Cada Passo</h3>
+            <p>
+              Estamos aqui para proporcionar todo o apoio e assistência que você precisa para trilhar esse caminho de aprendizado. Desde a escolha do material de estudo até a compreensão dos conceitos mais complexos, estamos ao seu lado, prontos para responder suas perguntas e oferecer orientações valiosas.
+            </p>
+
+            <h3>Participe, Interaja e Cresça</h3>
+            <p>
+              Sinta-se à vontade para navegar pelo site, mergulhar nos recursos disponíveis, fazer perguntas e compartilhar suas experiências. Esta comunidade é um espaço seguro e acolhedor para você interagir com outros estudantes, trocar ideias e insights, e crescer junto com seus colegas que compartilham dos mesmos objetivos educacionais.
+            </p>
+
+            <h3>Dê o Primeiro Passo Rumo ao Seu Futuro Acadêmico</h3>
+            <p>
+              O primeiro passo em direção a uma preparação bem-sucedida para os desafios acadêmicos que o aguardam começa com você. Abrace esta oportunidade de ampliar seus horizontes acadêmicos e alcançar todo o seu potencial. Junte-se a nós e vamos trilhar juntos essa emocionante jornada educacional!
+            </p>
+            
+          </div>
+</div>
+          
+
+  </section>
+
+    <section class="section-2">
+
+      <div class="swiper-card cardSwiper">
+
+        <h3 class="title-depoimentos">DEPOIMENTOS:</h3>
+
+
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide" id="swiper-card">
+            <img src="https://c1.staticflickr.com/3/2372/2380183266_bd37c42cdb.jpg" alt="">
+            <a class="link-depoimento" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+            </a>
+            <div class="container-content-card">
+              <h3>Guia360 - Estudos</h3>
+              <h1>GUSTAVO RODRIGUES</h1>
+            </div>
+          </div>
+    
+          <div class="swiper-slide" id="swiper-card">
+            <img src="https://c1.staticflickr.com/3/2372/2380183266_bd37c42cdb.jpg" alt="">
+            <a class="link-depoimento" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+            </a>
+            <div class="container-content-card">
+              <h3>Guia360 - Estudos</h3>
+              <h1>FELIPE BARBOSA</h1>
+            </div>
+          </div>
+
+          <div class="swiper-slide" id="swiper-card">
+            <img src="https://c1.staticflickr.com/3/2372/2380183266_bd37c42cdb.jpg" alt="">
+            <a class="link-depoimento" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+            </a>
+            <div class="container-content-card">
+              <h3>Guia360 - Estudos</h3>
+              <h1>DIEGO AVELINO</h1>
+            </div>
+          </div>
+
+          <div class="swiper-slide" id="swiper-card">
+            <img src="https://c1.staticflickr.com/3/2372/2380183266_bd37c42cdb.jpg" alt="">
+            <a class="link-depoimento" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+            </a>
+            <div class="container-content-card">
+              <h3>Guia360 - Estudos</h3>
+              <h1>JOÃO PEDRO</h1>
+            </div>
+          </div>
+    
+          <div class="swiper-slide" id="swiper-card">
+            <img src="https://c1.staticflickr.com/3/2372/2380183266_bd37c42cdb.jpg" alt="">
+            <a class="link-depoimento" href="#">
+              <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg>
+            </a>
+            <div class="container-content-card">
+              <h3>Guia360 - Estudos</h3>
+              <h1>LARISSA MANUELA</h1>
+            </div>
+          </div>
+          
+        </div>
+        <div class="swiper-pagination-card"></div>
+      </div>
+
+        <!-- <div class="container-postagens2">
+          <div class="div-pesquisa">
+            <input type="text" id="input-postagens" placeholder="procure aqui">
+            <button id="btn-pesquisar">
+              <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><style>svg{fill:#fff}</style><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
+            </button>
+          </div>
+          <div class="fundo-postagens">
+            <h1>Veja Agora</h1>
+            <hr>
+            <div class="div-links-postagens">
+              <div class="link-postagens"><a href="#">Modelos de Redação Nota 1000</a></div>
+              <div class="link-postagens"><a href="#">Aulão Enem Gratuito</a></div>
+              <div class="link-postagens"><a href="#">Download das Provas do Enem</a></div>
+              <div class="link-postagens"><a href="#">Mapas Mentais do Enem</a></div>
+            </div>
+          </div>
+        </div>
+
+        
+
+
+         <div class="container-postagens">
+            <div class="h1-postagens"><h1>ÚLTIMAS POSTAGENS</h1></div>
+              <div class="card">
+                <a href="#">Aulão de Geografia</a>
+              </div>
+
+              <div class="card">
+                <a href="#">Gabaritos Encceja</a>
+              </div>
+
+              <div class="card">
+                <a href="#">História Enem: o que estudar?</a>
+              </div>
+
+              <div class="card">
+                <a href="#">Resumo com Questões</a>
+              </div>
+
+              <div class="card">
+                <a href="#">Cronograma de Estudos</a>
+              </div>
+
+              <div class="card">
+                <a href="#">Questões Encceja</a>
+              </div>
+        </div>  -->
+        
+
+        
+    </section>
+  
+    <footer>
+      <div class="footer-column">
+          <h3>Links Úteis</h3>
+          <ul class="links-footer">
+              <li><a href="./index.html" id="active">Home</a></li>
+              <li><a href="./menu-simulados.html">Simulados</a></li>
+              <li><a href="./cronograma.html">Cronograma</a></li>
+              <li><a href="./aulao.html">Aulão</a></li>
+              <li><a href="./materiais-de-revisao.html">Materiais de Revisão</a></li>
+              <li><a href="#">Provas</a></li>
+              <li><a href="#">Notas de Corte</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Redes Sociais</h3>
+          <ul class="social-icons">
+              <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a></li>
+              <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a></li>
+              <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg></a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Contato</h3>
+          <p>Email: guia360@gmail.com</p>
+          <p>Telefone: (123) 456-7890</p>
+          
+          <img style="margin-top: 20px;" src="https://cutekawaiiresources.files.wordpress.com/2015/10/37.gif?w=1200&h=" alt="">
+      </div>
+  </footer>
+</main> 
+    
+    <script src="./Js/script.js"></script>
+    <script type="module">
+      import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.js'
+
+      var swiper = new Swiper(".cardSwiper", {
+        autoplay: {
+        delay: 30000,
+        disableOnInteraction: false,
+      },
+  slidesPerView: 1,
+  spaceBetween: 30,
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination-card",
+    clickable: true,
+  },
+  breakpoints: {
+    1200: {
+      slidesPerView: 4,
+      spaceBetween: 30,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    }
+  }
+});
+
+window.addEventListener('resize', function () {
+  swiper.update(); // Atualiza o swiper quando a janela for redimensionada
+});
+
+  var swiper = new Swiper(".mySwiper", {
+        autoplay: {
+        delay: 10000,
+        disableOnInteraction: false,
+      },
+      keyboard: {
+        enabled: true,
+      },
+      speed: 600,
+      parallax: true,
+      direction: 'horizontal',
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        centeredSlides: true,
+
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+       </script>
+
+        <button onclick="voltarAoTopo()" id="btnVoltarTopo" class="escondido">
+          <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#fff}</style><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+        </button>
+
+</body>
+</html>
