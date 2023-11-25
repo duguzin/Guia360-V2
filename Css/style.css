@@ -361,6 +361,7 @@ body.open-apostila .menu-apostila {
     width: 4.5em;
     height: 4.5em;
     z-index: 2;
+    transition: .3s;
 }
 
 .link-aulao {
