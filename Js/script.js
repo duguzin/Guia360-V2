@@ -44,11 +44,45 @@ function filtrar(event) {
     window.location.href = "busca.html?search=" + encodeURIComponent(searchTerm);
   }
 }
+
+function filtrarResul(event) {
+  var input = document.getElementById('input-resultados');
+  var searchTerm = input.value.trim();
+
+  // Verifica se o evento e a tecla Enter (código 13) estão disponíveis
+  if (event && event.key === 'Enter' && searchTerm !== "") {
+    // Redireciona para a página busca.html com o termo de pesquisa como parâmetro
+    window.location.href = "busca.html?search=" + encodeURIComponent(searchTerm);
+  }
+}
+
+function mostrarBotao() {
+  var inputResul = document.getElementById('input-resultados');
+  var botaoLimparResul = document.getElementById('limpar-resultados');
+  var input = document.getElementById('inputBusca');
+  var botaoLimpar = document.getElementById('limpar');
+
+  // Mostra o botão de limpar se o input não estiver vazio
+  botaoLimparResul.style.display = inputResul.value.length > 0 ? 'inline-block' : 'none';
+  botaoLimpar.style.display = input.value.length > 0 ? 'inline-block' : 'none';
+}
+
+function limparInput() {
+  var inputResul = document.getElementById('input-resultados');
+  var botaoLimparResul = document.getElementById('limpar-resultados');
+  var input = document.getElementById('inputBusca');
+  var botaoLimpar = document.getElementById('limpar');
+
+  // Limpa o input e esconde o botão de limpar
+  inputResul.value = '';
+  botaoLimparResul.style.display = 'none';
+  input.value = '';
+  botaoLimpar.style.display = 'none';
+}
   
   
 
   
-
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {

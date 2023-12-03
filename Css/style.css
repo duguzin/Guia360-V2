@@ -129,6 +129,14 @@ body {
     transition: .3s;
   }
 
+  #link-cronograma {
+    background-color: #ff9900;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
   .links-materiais a:hover, .links-simulados a:hover {
     background-color: #eee;
   }
@@ -999,6 +1007,7 @@ label {
     font-size: 16px;
     margin-bottom: 10px;
     letter-spacing: 1.5px;
+    
 }
 
 .container-header-busca h1 {
@@ -1092,6 +1101,28 @@ input[type="tel"]:focus,
 
 #input-resultados::placeholder {
     color: #003366;
+}
+
+#limpar-resultados {
+    display: none;
+    cursor: pointer;
+    background-color: #003366;
+    border: none;
+    height: 49px;
+    position: absolute;
+    padding: 0 15px;
+    right: 0;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+#limpar {
+    display: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0 5px;
+    padding-top: 3px;
 }
 
 .btn-cadastrar {
