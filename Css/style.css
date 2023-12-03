@@ -1108,7 +1108,7 @@ input[type="tel"]:focus,
     cursor: pointer;
     background-color: #003366;
     border: none;
-    height: 49px;
+    height: 45px;
     position: absolute;
     padding: 0 15px;
     right: 0;
