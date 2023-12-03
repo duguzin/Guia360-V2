@@ -976,6 +976,38 @@ label {
     color: #003366;
     font-weight: 600;
 }
+
+.section-busca {
+    padding: 0 3rem;
+    padding-bottom: 2rem;
+}
+
+.container-header-busca {
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.4);
+    margin-bottom: 30px;
+    /* background-image: url(https://fontawesome.com/images/icons-gray-bg.svg); */
+}
+
+
+.container-header-busca h3 {
+    color: #ff9900;
+    font-size: 16px;
+    margin-bottom: 10px;
+    letter-spacing: 1.5px;
+}
+
+.container-header-busca h1 {
+    color: #003366;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+
   
 /* input[type="text"], */
 input[type="email"],
@@ -1016,6 +1048,31 @@ input[type="tel"]:focus,
     right: 80px;
 }
 
+.div-input-resultados {
+    position: relative;
+    display: flex;
+    background-color: #fff;
+    border: #003366 solid 2px;
+    border-radius: 50px;
+    padding: 5px;
+    padding-left: 10px;
+    color: #003366;
+    align-items: center;
+    width: 300px;
+}
+
+#input-resultados {
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #fff;
+    color: #003366;
+    padding: 0 8px;
+}
+
 #inputBusca {
     width: 150px;
     height: 20px;
@@ -1030,6 +1087,10 @@ input[type="tel"]:focus,
 
 #inputBusca::placeholder {
     color: #fff;
+}
+
+#input-resultados::placeholder {
+    color: #003366;
 }
 
 .btn-cadastrar {
@@ -1307,6 +1368,29 @@ footer {
     display: none;
 }
 
+#lista-titulos-resultados {
+    position: relative;
+    left: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#lista-titulos-resultados {
+    display: flex;
+    /* justify-content: center; */
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    border: #ddd solid 1px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 12px;
+    width: 100%;
+    flex-direction: column;
+}
+
 #lista-titulos-pc li a, #lista-titulos li a {
     display: flex;
     align-items: center;
@@ -1318,7 +1402,28 @@ footer {
     background-color: #f6f6f6;
     padding: 12px;
     width: 100%;
+
 }
+#lista-titulos-resultados li a {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    text-decoration: none;
+    font-size: 18px;
+    color: #003366;
+    border: #ddd solid 1px;
+    background-color: #fff;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#lista-titulos-resultados li a:hover {
+    background-color: #f6f6f6;
+    color: #ff9900;
+}
+
+
 
 
 
@@ -2468,6 +2573,19 @@ input[type="radio"] {
     }
 }
 
+@media screen and (max-width: 550px) {
+    .section-busca {
+        padding: 1rem;
+    }
+}
+@media screen and (max-width: 460px) {
+    .div-input-resultados {
+        width: 260px;
+    }
+    .container-header-busca {
+        padding: 1.5rem;
+    }
+}
 
 /* Estilos para tornar o footer responsivo */
 @media screen and (max-width: 600px) {
