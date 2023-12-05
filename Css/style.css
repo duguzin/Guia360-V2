@@ -572,7 +572,9 @@ body.open-apostila .menu-apostila {
     z-index: 2;
     position: relative;
     display: flex;
-    gap: 4rem;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .title-apostila {
@@ -585,11 +587,13 @@ body.open-apostila .menu-apostila {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 35px;
+
 }
 
 .img-slide-apostila {
     width: 250px;
     height: 300px;
+    padding-top: 1rem;
 }
 
 .link-apostila {
@@ -2072,7 +2076,7 @@ input[type="radio"] {
         font-size: 16px;
     }
     .content5 img, .content6 img {
-        height: 400px;
+        height: 300px;
     }
     .content8, .content9 {
         width: 100%;
@@ -2448,10 +2452,14 @@ input[type="radio"] {
     }
     #swiper-pagination-apostila {
         position: absolute;
-        top: 580px;
+        top: 590px;
     }
 }
 @media screen and (max-width: 330px) {
+    #swiper-pagination-apostila {
+        position: absolute;
+        top: 565px;
+    }
     section.section-2 {
         padding: 1rem;
     }
