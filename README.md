@@ -1,6 +1,6 @@
 # Guia360 V2
 
-Este é o **Guia360 V2**, um projeto de site desenvolvido utilizando **HTML**, **CSS** e **JavaScript puro**.  
+Este é o **Guia360 V2**, um projeto de site desenvolvido utilizando **HTML**, **CSS** e **JavaScript**.  
 O objetivo do projeto é apresentar informações de forma interativa e organizada, utilizando recursos visuais modernos e funcionais.
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
